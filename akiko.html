@@ -15,4 +15,117 @@
     <title>株式会社ワオナス　坂口暁子</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>test</body>
+<body style="margin:0; font-family: 'Inter', sans-serif; background:#fff;">
+    <div style="max-width:430px; margin:auto; box-shadow:0 2px 8px #0002; border-radius:20px; overflow:hidden; background:#fff;">
+        <!-- Profile Image Placeholder -->
+        <div style="display:flex; flex-direction:column; align-items:center; padding-top:32px;">
+            <div style="width:180px; height:180px; border-radius:50%; background:#ddd; margin-bottom:16px;"></div>
+        </div>
+        <!-- Name and Company -->
+        <div style="text-align:center; margin-top:8px;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+                <div style="display:flex; align-items:center; gap:8px; justify-content:center;">
+                    <img src="logo.svg" alt="wownas" style="height:32px;">
+                    <span style="font-size:18px; color:#b07bac; letter-spacing:2px;">wownas</span>
+                </div>
+                <div style="margin-top:8px;">
+                    <img src="cloudis-logo.svg" alt="cloudis" style="height:36px;">
+                </div>
+            </div>
+            <div style="margin-top:8px; color:#888; font-size:16px;">代表取締役・CEO</div>
+            <div style="font-size:40px; font-weight:700; color:#666; letter-spacing:2px;">坂口 暁子</div>
+            <div style="font-size:22px; font-weight:700; color:#888; letter-spacing:1px;">AKIKO SAKAGUCHI</div>
+        </div>
+        <!-- Contact Card -->
+        <div style="background:#8d5a99; color:#fff; border-radius:24px; margin:32px 16px 0 16px; box-shadow:0 2px 8px #0001; padding:24px 20px 20px 20px; border:3px solid #a6b8ff;">
+            <div style="font-size:18px; margin-bottom:8px;">〒529-1551 滋賀県東近江市宮川町683-103<br>683-103 Miyagawa-cho, Higashiomi-shi,<br>Shiga 529-1551, Japan</div>
+            <div style="display:flex; align-items:center; gap:12px; margin:12px 0;">
+                <span style="font-size:22px;">📞</span>
+                <span style="font-size:18px;">012-345-6789</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; margin:12px 0;">
+                <span style="font-size:22px;">✉️</span>
+                <span style="font-size:18px;">akiko@wownas.com</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; margin:12px 0;">
+                <span style="font-size:22px;">📷</span>
+                <span style="font-size:18px;">@akiko.sakaguchi.ark</span>
+            </div>
+        </div>
+        <!-- SNS QR Codes -->
+        <div style="margin:32px 0 0 0; text-align:center;">
+            <div style="font-size:24px; color:#888; font-weight:500; margin-bottom:8px;">SNSリンク</div>
+            <div style="background:#8d5a99; border-radius:24px; margin:0 16px; padding:24px 0 12px 0; display:flex; flex-direction:column; align-items:center;">
+                <div style="display:flex; gap:24px; justify-content:center; margin-bottom:12px;">
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+                        <div id="qr-website"></div>
+                        <span style="font-size:13px; color:#a6d1ff; margin-top:2px;">WEBSITE</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+                        <div id="qr-facebook"></div>
+                        <span style="font-size:13px; color:#a6d1ff; margin-top:2px;">Facebook</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+                        <div id="qr-instagram"></div>
+                        <span style="font-size:13px; color:#e6a6d1; margin-top:2px;">INSTAGRAM</span>
+                    </div>
+                </div>
+                <div style="display:flex; gap:24px; justify-content:center;">
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+                        <div id="qr-whatsapp"></div>
+                        <span style="font-size:13px; color:#fff; margin-top:2px;">WhatsApp</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+                        <div id="qr-line"></div>
+                        <span style="font-size:13px; color:#b6ffb6; margin-top:2px;">LINE</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+                        <div id="qr-mail"></div>
+                        <span style="font-size:13px; color:#eee; margin-top:2px;">MAIL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Large QR -->
+        <div style="margin:32px 0 0 0; text-align:center;">
+            <div style="font-size:22px; color:#888; margin-bottom:8px;">スキャン、またはクリック</div>
+            <div id="qr-main" style="display:inline-block;"></div>
+        </div>
+        <div style="height:32px;"></div>
+    </div>
+    <!-- QRious JS for dynamic QR codes -->
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+    <script>
+        // Set your QR code data here
+        const qrData = {
+            website: 'https://wownas.com',
+            facebook: 'https://facebook.com/akiko.sakaguchi.ark',
+            instagram: 'https://instagram.com/akiko.sakaguchi.ark',
+            whatsapp: 'https://wa.me/8123456789',
+            line: 'https://line.me/ti/p/akiko',
+            mail: 'mailto:akiko@wownas.com',
+            main: 'https://wownas.com/contact-akiko'
+        };
+        function makeQR(id, value, size=90) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.innerHTML = '';
+            const qr = new QRious({
+                value,
+                size,
+                background: 'white',
+                foreground: 'black',
+                level: 'H'
+            });
+            el.appendChild(qr.image);
+        }
+        makeQR('qr-website', qrData.website);
+        makeQR('qr-facebook', qrData.facebook);
+        makeQR('qr-instagram', qrData.instagram);
+        makeQR('qr-whatsapp', qrData.whatsapp);
+        makeQR('qr-line', qrData.line);
+        makeQR('qr-mail', qrData.mail);
+        makeQR('qr-main', qrData.main, 200);
+        // To update a QR code dynamically, just call makeQR with new data
+    </script>
+</body>

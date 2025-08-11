@@ -15,5 +15,212 @@
     <title>株式会社ワオナス　オンライン名刺システム</title>
     <link rel="stylesheet" href="/src/styles.css">
 </head>
-<body>test
+<body>
+    <div class="business-card-app">
+      <!-- Header with logo and title -->
+      <div class="header">
+        <img src="/assets/wownas-logo.svg" alt="wownas logo" class="logo" style="height: 38px; margin-right: 10px; vertical-align: middle;" />
+        <span class="header-title">wownas</span>
+        <span class="header-desc">オンライン名刺システム</span>
+      </div>
+      <div class="members-section">
+        <h2 class="members-title">日本メンバー・Japanese Members</h2>
+        <!-- Member Cards -->
+        <a class="member-card" href="https://meishi.wownas.com/akiko" target="_blank" rel="noopener noreferrer">
+          <div class="member-photo" style="background-image: url('/assets/akiko.jpg');"></div>
+          <div class="member-info">
+            <div class="member-role">代表取締役(CEO)</div>
+            <div class="member-name">坂口 暁子</div>
+            <div class="member-ename">AKIKO SAKAGUCHI</div>
+          </div>
+        </a>
+        <a class="member-card" href="https://meishi.wownas.com/rintarou" target="_blank" rel="noopener noreferrer">
+          <div class="member-photo" style="background: #a78bfa;"></div>
+          <div class="member-info">
+            <div class="member-role">肩書</div>
+            <div class="member-name">大澤凛太郎</div>
+            <div class="member-ename">RINTAROU OSAWA</div>
+          </div>
+        </a>
+        <a class="member-card" href="https://meishi.wownas.com/luqman" target="_blank" rel="noopener noreferrer">
+          <div class="member-photo" style="background: #a78bfa;"></div>
+          <div class="member-info">
+            <div class="member-role">肩書</div>
+            <div class="member-name">ルクマン ハディ</div>
+            <div class="member-ename">LUQMAN HADI</div>
+          </div>
+        </a>
+      </div>
+      <!-- Decorative Circles -->
+      <div class="bg-circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+        <div class="circle circle5"></div>
+      </div>
+    </div>
+    <style>
+      body {
+        background: #fff;
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        margin: 0;
+        min-height: 100vh;
+      }
+      .business-card-app {
+        position: relative;
+        max-width: auto;
+        margin: 16px auto;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 2px 16px 0 #0001;
+        padding: 0 0 32px 0;
+        overflow: hidden;
+        min-height: 98vh;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        padding: 24px 24px 0 24px;
+        background: #fff;
+        z-index: 2;
+        position: relative;
+      }
+      .logo {
+        height: 38px;
+        width: auto;
+      }
+      .header-title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #b48ca7;
+        margin-left: 8px;
+        letter-spacing: 1px;
+      }
+      .header-desc {
+        font-size: 1.1rem;
+        color: #b48ca7;
+        margin-left: 16px;
+        font-weight: 400;
+      }
+      .members-section {
+        margin-top: 12px;
+        padding: 0 16px;
+        position: relative;
+        z-index: 2;
+      }
+      .members-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #b48ca7;
+        margin-bottom: 18px;
+        margin-top: 10px;
+        text-align: left;
+      }
+      .member-card {
+        display: flex;
+        align-items: center;
+        background: #b48ca7cc;
+        border-radius: 24px;
+        margin-bottom: 22px;
+        box-shadow: 0 2px 8px 0 #0001;
+        padding: 0 0 0 0;
+        min-height: 90px;
+        position: relative;
+      }
+      .member-photo {
+        width: 90px;
+        height: 90px;
+        border-radius: 20px 0 0 20px;
+        background-size: cover;
+        background-position: center;
+        margin-right: 18px;
+        margin-left: 8px;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px 0 #0002;
+      }
+      .member-info {
+        padding: 12px 0 12px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .member-role {
+        font-size: 0.95rem;
+        color: #f3e6f7;
+        font-weight: 400;
+        margin-bottom: 2px;
+      }
+      .member-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 1px;
+        line-height: 1.1;
+      }
+      .member-ename {
+        font-size: 0.95rem;
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-top: 2px;
+      }
+      /* Decorative Circles */
+      .bg-circles {
+        position: absolute;
+        left: 0; top: 0; width: 100%; height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.35;
+        filter: blur(0.5px);
+      }
+      .circle1 {
+        width: 160px; height: 160px;
+        left: -40px; top: 520px;
+        background: #7ba7df;
+      }
+      .circle2 {
+        width: 180px; height: 180px;
+        left: -60px; top: 650px;
+        background: #b48ca7;
+      }
+      .circle3 {
+        width: 140px; height: 140px;
+        left: 220px; top: 600px;
+        background: #b48ca7;
+      }
+      .circle4 {
+        width: 120px; height: 120px;
+        left: 320px; top: 500px;
+        background: #7ba7df;
+      }
+      .circle5 {
+        width: 200px; height: 200px;
+        left: -80px; top: 750px;
+        background: #c084fc;
+      }
+      @media (max-width: 500px) {
+        .business-card-app {
+          max-width: 100vw;
+          border-radius: 0;
+        }
+        .header {
+          padding: 18px 8px 0 8px;
+        }
+        .members-section {
+          padding: 0 4px;
+        }
+        .member-card {
+          min-height: 80px;
+        }
+        .member-photo {
+          width: 70px; height: 70px;
+          border-radius: 16px 0 0 16px;
+        }
+      }
+    </style>
 </body>
